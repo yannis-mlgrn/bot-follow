@@ -27,11 +27,19 @@ submit.click()
 sleep(3)
 print("go to home")
 #enregistrer le mot de passe ?
-home = driver.find_element_by_xpath("/html/body/div[1]/section/main/div/div/div/div/button")
+home = driver.find_element_by_xpath("//button[contains(text(), 'Plus tard')]")
 home.click()
 
+sleep(3)
 # les notification
-#notif = driver.find_element_by_xpath("/html/body/div[4]/div/div/div/div[3]/button[2]")
-#notif.click()
+notif = driver.find_element_by_xpath("//button[contains(text(), 'Plus tard')]")
+notif.click()
 
+sleep(3)
 
+for i in range(5) :
+
+	follow = driver.find_element_by_xpath("/html/body/div[1]/section/main/section/div[3]/div[2]/div[2]/div/div/div/div[1]/div[3]/button/div")
+	follow.click()
+	sleep(1)
+	driver.refresh()
